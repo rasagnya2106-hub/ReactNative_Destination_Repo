@@ -1,0 +1,20 @@
+import * as React from 'react';
+
+export const isEmailValid = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+};
+
+export const isPasswordStrong = (password: string): boolean => {
+    const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return strongPasswordRegex.test(password);
+};
+
+export const isPhoneNumberValid = (phoneNumber: string): boolean => {
+    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+    return phoneRegex.test(phoneNumber);
+};
+
+export const isRequiredFieldFilled = (value: string): boolean => {
+    return value.trim().length > 0;
+};
